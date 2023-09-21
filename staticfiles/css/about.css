@@ -1,0 +1,179 @@
+/* Custom styles for the About Us and Contact Us sections */
+
+/* About Us Section */
+.about-us-section {
+  background-color: #f8f9fa; /* Light gray background */
+  padding: 60px 0;
+  text-align: center;
+}
+.h{
+  font-size: 40px;
+  color: #000;
+  font-weight: 800;
+}
+.container1{
+  background-color: #336;
+  margin: 0 10%;
+  padding: 100px 70px;
+  border-radius:100px;
+}
+.about-content {
+  text-align: left;
+  margin:0 30px;
+  padding: 40px;
+  background-color: #fff; /* White background */
+  box-shadow: 25px 40px 0px rgba(25, 11, 3, 0.7);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+
+.about-content p {
+  font-size: 22px;
+  color: #666; /* Medium gray text color */
+  line-height: 1.6;
+}
+
+/* Image Style */
+.img-fluid {
+  max-width: 90%;
+  margin:20px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 15px -20px 3px rgba(25, 11, 3, 0.7), -15px -20px 3px rgba(25, 11, 3, 0.7);
+  transition: transform 0.3s ease;
+}
+.img-fluid1 {
+  max-width: 90%;
+  margin:20px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 15px 20px 3px rgba(25, 11, 3, 0.7),-15px 20px 3px rgba(25, 11, 3, 0.7);
+  transition: transform 0.3s ease;
+}
+
+.about-content:hover{
+    transform: translateY(55px); /* Move the card up on hover */
+}
+.img-fluid:hover{
+    transform: translateY(-50px) scale(1.1);
+}
+.img-fluid1:hover{
+    transform: translateY(50px) scale(1.1);
+}
+
+.contact-section {
+    background-color: #666; /* Set a background color */
+    padding: 50px 0; /* Add some padding for spacing */
+}
+.container2{
+  background-color: #ffa726;
+  margin: 0 10%;
+  padding: 70px 70px;
+  border-radius:100px;
+}
+.h2{
+  font-size: 40px;
+  color: #fff;
+  font-weight: 800;
+}
+
+.contact-card {
+    background-color: #ffffff; /* Card background color */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners for cards */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+
+    transition: transform 0.5s; /* Add a smooth hover effect */
+}
+
+.contact-card:hover {
+    transform: translateY(-5px) scale(1.1); /* Move the card up on hover */
+}
+
+.time:hover {
+    transform: translateY(5px) scale(1.1); /* Move the card up on hover */
+}
+
+.contact-card i {
+    font-size: 36px; /* Large icon size */
+    margin-bottom: 10px;
+}
+
+.contact-card h4 {
+    font-size: 24px; /* Card name font size */
+    margin: 10px 0;
+}
+
+.contact-card p {
+    font-size: 18px; /* Card detail font size */
+}
+
+.contact-card a {
+    color: #dc3545; /* Red color for links */
+    text-decoration: none;
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+.contact-card a:hover {
+    color: #c82333; /* Darker red on hover */
+}
+
+.text-danger {
+    color: #dc3545; /* Red color for phone and email */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens here */
+  .about-us-section {
+    padding: 10px 0;
+  }
+  .container1 {
+    margin: 10px 10px;
+    padding: 0px 40px 40px 40px;
+  }
+  .h{
+    font-size:24px;
+  }
+
+  .about-content {
+    margin: 50px 0;
+    padding: 20px;
+  }
+
+  .about-content p {
+    font-size: 18px;
+  }
+
+  .img-fluid,
+  .img-fluid1 {
+    margin: 20px;
+  }
+
+  .container2 {
+    padding: 50px;
+  }
+
+  .contact-card {
+    padding: 15px;
+    margin-bottom:50px;
+  }
+
+  .h2 {
+    font-size: 30px;
+  }
+
+  .contact-card i {
+    font-size: 30px;
+  }
+
+  .contact-card h4 {
+    font-size: 20px;
+  }
+
+  .contact-card p {
+    font-size: 16px;
+  }
+}
+

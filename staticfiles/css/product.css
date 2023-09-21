@@ -1,0 +1,58 @@
+.sec{
+  /*background-color: #111;*/
+}
+.section-title {
+  font-size: 60px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card {
+  margin:0px;
+  border: 1.5px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 10px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover{
+  box-shadow: 10px 10px 10px black;
+}
+
+.card-img-top {
+  object-fit: cover;
+  height: 300px;
+}
+
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  color: #007bff;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card-text {
+  color: black;
+  padding: 20px 0;
+  margin-top: 10px;
+  max-height: 20px; /* Adjust this value as needed */
+  overflow-y: auto; /* Add scrollbars when content exceeds max-height */
+}
+
+.card-text::-webkit-scrollbar {
+  display: none; /* Hide the scrollbar */
+}
+
+.card-price{
+  color: black;
+}
+
+
+
+@media (max-width: 768px) {
+
+}

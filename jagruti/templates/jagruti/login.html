@@ -1,0 +1,122 @@
+{% extends "jagruti/base.html" %}
+{% block content %}
+{% load static %}
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+
+<!-- Sing in  Form -->
+<section class="sign-in">
+	<div class="contain">
+		<div class="signin-content">
+			<div class="signin-image">
+				<figure><img src="{% static 'images/login.jpg' %}" alt="sing up image"></figure>
+			</div>
+
+			<div class="signin-form">
+				<h2 class="form-title">Sign In</h2>
+				{% if msg %}
+					<h2 style="color:red">{{msg}}</h2>
+				{% endif %}
+				<form method="POST" class="register-form" id="login-form" action="{% url 'loginuser' %}">
+					{% csrf_token %}
+					<div class="form-group">
+						<label for="email"><i class="zmdi zmdi-account material-icons-name"></i></label>
+						<input type="email" name="email" id="email" placeholder="Your Email ID" required/>
+					</div>
+					<div class="form-group">
+						<label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+						<input type="password" name="password" id="your_pass" placeholder="Password" required/>
+					</div>
+					<div class="form-group">
+						<input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+						<label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+					</div>
+					<div class="form-group form-button">
+
+						<input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+
+						<a href="{% url 'registerpage' %}" class="signup-image-link">Create an account</a>
+					</div>
+					<div class="form-group form-button">
+
+						 
+
+						<a href="{% url 'fgp' %}" class="signup-image-link">Forgot Password</a>
+					</div>
+				</form>
+				<!-- <div class="social-login">
+					<span class="social-label">Or login with</span>
+					<ul class="socials">
+						<li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+						<li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+						<li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+					</ul>
+				</div> -->
+			</div>
+		</div>
+	</div>
+</section>
+
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head>-->
+<!--<title>Login Form</title>-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+<!--<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>-->
+<!--&lt;!&ndash; Custom Theme files &ndash;&gt;-->
+<!--<link href="{% static '/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />-->
+<!--&lt;!&ndash; //Custom Theme files &ndash;&gt;-->
+<!--&lt;!&ndash; web font &ndash;&gt;-->
+<!--<link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">-->
+<!--&lt;!&ndash; //web font &ndash;&gt;-->
+<!--</head>-->
+<!--<body>-->
+<!--	&lt;!&ndash; main &ndash;&gt;-->
+<!--	<div class="main-w3layouts wrapper">-->
+<!--		<h1>Login Form</h1>-->
+<!--        {% if msg %}-->
+<!--            <h2 style="color:red">{{msg}}</h2>-->
+<!--        {% endif %}-->
+<!--		<div class="main-agileinfo">-->
+<!--			<div class="agileits-top">-->
+<!--				<form action="{% url 'loginuser' %}" method="post">-->
+<!--                    {% csrf_token %}-->
+<!--					 -->
+<!--					<input class="text email" type="email" name="email" placeholder="Email" required="">-->
+
+<!--					<input class="text" type="password" name="password" placeholder="Password" required="">-->
+<!--					 -->
+<!--				 -->
+<!--					<input type="submit" value="SIGNUP">-->
+<!--				</form>-->
+<!--				<p>Don't have an Account? <a href="#"> Register Now!</a></p>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	 -->
+<!--		<ul class="colorlib-bubbles">-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--			<li></li>-->
+<!--		</ul>-->
+<!--	</div>-->
+	<!-- //main -->
+<!--</body>-->
+<!--</html>-->
+{% endblock %}

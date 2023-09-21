@@ -1,0 +1,4 @@
+django
+razorpay
+mysqlclient
+pillow

@@ -1,0 +1,63 @@
+{% extends "jagruti/base.html" %}
+{% block content %}
+{% load static %}
+ 
+<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+
+
+
+<section class="profile">
+    <div class="container mt-5 mb-5">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title text-center">Update Profile</h2>
+              <form action="{% url 'profileupdate' pk=request.session.id %}" method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <p class="form-control-static">{{ user.Firstname }}</p>
+<!--                  <input type="text" class="form-control" id="firstname" name="firstname" placeholder="First Name" value="{{ user.Firstname }}" >-->
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <p class="form-control-static">{{ user.Lastname }}</p>
+<!--                  <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" value="{{ user.Lastname }}" >-->
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <p class="form-control-static">{{ user.Email }}</p>
+    <!--              <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="{{ user.Email }}" >-->
+                </div>
+                <div class="form-group">
+                  <label for="mobileNumber">Mobile Number</label>
+                  <input type="tel" class="form-control" id="mobilenumber" name="mobilenumber" placeholder="Mobile Number" value="{{ user.MobileNumber }}" required>
+                </div>
+                <div class="form-group">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" name="address" placeholder="Address" value="{{ user.Address }}" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
+              </form>
+    <!--          {% if updated_user %}-->
+    <!--          <div class="mt-3">-->
+    <!--            <h4>Updated Details:</h4>-->
+    <!--            <p><strong>First Name</strong> {{ updated_user.firstname }}</p>-->
+    <!--            <p><strong>Last Name:</strong> {{ updated_user.lastname }}</p>-->
+    <!--            <p><strong>Email:</strong> {{ updated_user.email }}</p>-->
+    <!--            <p><strong>Mobile Number:</strong> {{ updated_user.mobilenumber }}</p>-->
+    <!--            <p><strong>Address:</strong> {{ updated_user.address }}</p>-->
+    <!--          </div>-->
+    <!--          {% endif %}-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+
+{% endblock %}

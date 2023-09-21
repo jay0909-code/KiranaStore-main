@@ -1,0 +1,55 @@
+/* Add your custom styles for the order table */
+.order{
+  min-height: 80vh;
+  background-color: #222;
+  color: #fff;
+  border-radius: 30px;
+  padding-top: 20px;
+  margin-bottom: 40px;
+  max-width:80%;
+}
+h2{
+    font-size: 40px;
+}
+
+.table {
+  width: 100%;
+}
+
+.table thead th {
+  color: #fff;
+  text-align: center;
+}
+
+.table tbody tr {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  min-font-size: 12px;
+}
+
+.table tbody tr:hover {
+  background-color: #fff;
+  color: #222;
+}
+
+
+/* Optional: Adjust these styles as needed for image display */
+.table tbody td img {
+  max-width: 100px;
+  max-height: 100px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Optional: Add margin to the bottom of the table */
+.table {
+  margin-bottom: 20px;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  overflow-y: hidden; /* Hide vertical scrollbar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS devices */
+}

@@ -1,0 +1,33 @@
+{% extends 'jagruti/base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">
+
+<section class="sec m-5">
+<div class="container text-center">
+    <h1 class="section-title p-5">Featured Products</h1>
+    <div class="row">
+        {% for product in data %}
+        <div class="col-md-4 mb-4 mx-auto mb-5"> <!-- Added mx-auto class -->
+            <div class="card">
+                <a href="{% url 'productdetails' pk=product.id %}">
+                <img src="{{ product.Image.url }}" class="card-img-top" alt="{{ product.Productname }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.Productname }}</h5>
+                    <p class="card-text">{{ product.Description }}
+                    <p class="card-price">RS{{ product.Price }}</p>
+                    <!-- Add to Cart / Buy Now buttons -->
+                    {% if request.session.email %}
+                    <button class="btn btn-primary">Add to Cart</button>
+                    <button class="btn btn-success">Buy Now</button>
+                    {% endif %}
+                </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</section>
+
+{% endblock %}

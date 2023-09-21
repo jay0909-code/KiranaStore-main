@@ -1,0 +1,36 @@
+.profile{
+  background: url('/static/images/bg.jpg');
+  padding: 40px;
+}
+
+.card{
+  padding:20px 15px;
+  border-radius: 20px;
+}
+.card-title{
+  font-size:35px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+.updated-details {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.updated-details h4 {
+  margin-bottom: 10px;
+}
+.updated-details p {
+  margin: 5px 0;
+}
+
+.form-control-static {
+  padding: 8px 12px;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

@@ -1,0 +1,81 @@
+/* Custom CSS for Shopping Cart Page */
+
+
+
+.cart-container {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+}
+.wi{
+    font-size:1.2em;
+    font-weight: 700;
+}
+
+/* Custom CSS for badges */
+.badge {
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+
+.card {
+    background-color: #343a40;
+    border: none;
+    border-radius: 15px;
+}
+
+.card-title, .card-text {
+    color: white;
+}
+
+.card img {
+    border-radius: 15px;
+}
+
+.btn {
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.btn-light {
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+.btn-light:hover {
+    background-color: #e2e6ea;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+}
+
+.btn-danger:hover {
+    background-color: #bb2d3b;
+}
+.total-order-amount {
+  font-size: 1.5em; /* Adjust the font size as needed */
+}
+
+
+
+@media (max-width: 767px) {
+  .wi {
+    font-size: 0.8em; /* Adjust the font size for mobile view as needed */
+  }
+  .total-order-amount {
+    font-size: 0.8em; /* Adjust the font size as needed */
+  }
+  .badge {
+    font-size: 0.8em;
+  }
+}

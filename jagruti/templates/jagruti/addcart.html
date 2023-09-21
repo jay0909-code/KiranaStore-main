@@ -1,0 +1,106 @@
+{% extends 'jagruti/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section style="background-image: url('/static/images/bg.jpg');">
+<div class="container p-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="card-title text-center">Add Category</h2>
+          <form method="post" enctype="multipart/form-data" action="{% url 'ac' %}">
+            {% csrf_token %}
+            <div class="form-group">
+              <!-- <label for="category">Select Product Category</label>
+              <select class="form-control" id="category" name="category">
+                {% for i in data %}
+                  <option value="{{ i.id }}">{{ i.Categoryname }}</option>
+                {% endfor %}
+              </select>
+            </div> -->
+            <div class="form-group">
+              <label for="name">Category Name</label>
+              <input type="text" class="form-control" name="name" id="name" placeholder="Enter Product Name" required>
+            </div>
+            <!-- <div class="form-group">
+              <label for="price">Product Price</label>
+              <input type="number" class="form-control" name="price" id="price" placeholder="Enter Product Price" required>
+            </div>
+            <div class="form-group">
+              <label for="quantity">Product Quantity</label>
+              <input type="number" class="form-control" name="quantity" id="quantity" placeholder="Enter Product Quantity" required>
+            </div> -->
+            <div class="form-group">
+              <label for="img">Category Image</label>
+              <input type="file" class="form-control-file" name="img" id="img" accept="image/*" required>
+            </div>
+            <!-- <div class="form-group">
+              <label for="desc">Product Description</label>
+              <textarea class="form-control" name="desc" id="desc" rows="3" placeholder="Enter Product Description" required></textarea>
+            </div> -->
+<!--            <div class="form-group text-center">-->
+<!--              <img src="{% static 'placeholder-image.jpg' %}" alt="Product Image Preview" class="img-preview">-->
+<!--            </div>-->
+            <button type="submit" class="btn btn-dark btn-block">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--        <form method="post" enctype="multipart/form-data" action="{% url 'addproduct' %}">-->
+<!--            {% csrf_token %}-->
+<!--            <div class="form-group">-->
+<!--                <label for="exampleFormControlSelect1">Select Product Category</label>-->
+<!--                <select class="form-control" id="exampleFormControlSelect1" name="category">-->
+<!--                {% for i in data %}  -->
+<!--                  <option value={{i.id}}>{{i.Categoryname}}</option>-->
+<!--                {% endfor %}   -->
+<!--                </select>-->
+<!--              </div>-->
+<!--            <div class="form-group">-->
+<!--              <label for="exampleFormControlInput1">Product Name</label>-->
+<!--              <input type="text" class="form-control" name="name" id="exampleFormControlInput1" placeholder="Enter Product Name">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="exampleFormControlInput1">Product Price</label>-->
+<!--                <input type="number" class="form-control" name="price" id="exampleFormControlInput1" placeholder="Enter Product Price">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="exampleFormControlInput1">Product Quantity</label>-->
+<!--                <input type="number" class="form-control" name="quantity" id="exampleFormControlInput1" placeholder="Enter Product Quantity">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--                <label for="exampleFormControlInput1">Product Image</label>-->
+<!--                <input type="file" class="form-control" name="img" id="exampleFormControlInput1" placeholder="Upload Product Image">-->
+<!--            </div>-->
+<!--            <div class="form-group">-->
+<!--              <label for="exampleFormControlTextarea1">Product Description</label>-->
+<!--              <textarea class="form-control" name="desc" id="exampleFormControlTextarea1" rows="3"></textarea>-->
+<!--            </div>-->
+<!--            <button type="submit" class="btn btn-primary">Submit</button>-->
+<!--          </form>-->
+
+
+{% endblock %}

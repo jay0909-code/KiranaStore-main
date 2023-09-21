@@ -1,0 +1,111 @@
+{% extends 'jagruti/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/order.css' %}">
+
+
+
+<div class="container mt-5 order">
+  <h2 class="text-center mb-4">Order History</h2>
+  {% if request.session.email %}
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product Image</th>
+          <th>Product Name</th>
+          <th>Product Quantity</th>
+          <th>Order Price</th>
+          <th>Order Date</th>
+          <th>Buyer Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in productlist %}
+        <tr>
+          <td><img src="{{i.image.url}}"height="100px "/></td>
+
+          <td>{{i.name}}</td>
+          <td>{{i.quantity}}</td>
+          <td>{{i.price}}</td>
+          <td>{{i.date}}</td>
+          <td>{{i.username}}</td>
+
+          </form>
+
+        </tr>
+        {% endfor %}
+        {% if prolist %}
+        {% for j in prolist %}
+        <tr>
+          <td><img src="{{j.image.url}}"height="100px "/></td>
+
+          <td>{{j.name}}</td>
+          <td>{{j.qty}}</td>
+          <td>{{j.price}}</td>
+          <td>{{j.date}}</td>
+          <td>{{j.username}}</td>
+
+          {% comment %} <td>{{i.date}}</td> {% endcomment %}
+          </form>
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+
+      </tbody>
+    </table>
+  </div>
+  {% elif request.session.username %}
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product Image</th>
+          <th>Product Name</th>
+          <th>Product Quantity</th>
+          <th>Order Price</th>
+          <th>Order Date</th>
+          <th>Buyer Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in productlist %}
+        <tr>
+          <td><img src="{{i.image.url}}"height="100px "/></td>
+
+          <td>{{i.name}}</td>
+          <td>{{i.quantity}}</td>
+          <td>{{i.price}}</td>
+          <td>{{i.date}}</td>
+          <td>{{i.username}}</td>
+          </form>
+
+        </tr>
+        {% endfor %}
+        {% if prolist %}
+        {% for j in prolist %}
+        <tr>
+          <td><img src="{{j.image.url}}"height="100px "/></td>
+
+          <td>{{j.name}}</td>
+          <td>{{j.qty}}</td>
+          <td>{{j.price}}</td>
+          <td>{{j.date}}</td>
+          <td>{{j.username}}</td>
+
+          {% comment %} <td>{{i.date}}</td> {% endcomment %}
+          </form>
+
+        </tr>
+        {% endfor %}
+        {% endif %}
+
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}

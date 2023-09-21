@@ -1,0 +1,54 @@
+{% extends "jagruti/base.html" %}
+{% load static %}
+{% block content %}
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+
+
+
+
+
+
+<section class="question-page" style="background: url('/static/images/bg.jpg');">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-5 mb-5">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Password Verification Details</h2>
+                        {% if msg %}
+                            <h2 class="text-center" style="color: red;">{{msg}}</h2>
+                        {% endif %}
+                        <p class="text-center">Please answer the following security questions to help you reset your password in the future.</p>
+                        <form method="post" action="{% url 'question'%}">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="security_question_1">What is your favorite childhood pet's name?</label>
+                                <input type="text" class="form-control" id="security_question_1" name="question1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="security_question_2">In what city were you born?</label>
+                                <input type="text" class="form-control" id="security_question_2" name="question2" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="security_question_3">What is the name of your maternal grandmother?</label>
+                                <input type="text" class="form-control" id="security_question_3" name="question3" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact">Your Contact Number</label>
+                                <input type="text" class="form-control" id="contact" name="contact" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}

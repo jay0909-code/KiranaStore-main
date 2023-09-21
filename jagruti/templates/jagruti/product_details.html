@@ -1,0 +1,101 @@
+{% extends 'jagruti/base.html' %}
+{% load static %}
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/product_details.css' %}">
+
+
+
+<section class="details">
+<!-- Button to go back to the product list -->
+  <div class="back-button">
+    <a href="{% url 'productpage' %}" class="btn btn-primary">Back to Product List</a>
+  </div>
+  <div class="main-section">
+    <!-- First Subsection (50% width) - Image -->
+    <div class="subsection image-section">
+      <img src="{{ data.Image.url }}" alt="Product Image" class="img-fluid">
+    </div>
+
+    <!-- Second Subsection (50% width) - Product Details -->
+    <div class="subsection details-section">
+      <h2 class="product-title">{{ data.Productname }}</h2>
+      <p class="product-description">{{ data.Description }}</p>
+      <p class="product-price"><strong>Price:</strong> RS{{ data.Price }}</p>
+{% if request.session.email %}
+
+      <!-- Add to Cart Button -->
+      <form method="post" action="{% url 'addcart' %}" class="product-action">
+        {% csrf_token %}
+        <input type="text" value="{{ data.id }}" name="productid" hidden>
+        <input type="number" name="quantity" required>
+        <button class="btn btn-success text-uppercase">Add to Cart</button>
+      </form>
+
+      <!-- Buy Now Button -->
+      <form method="post" action="{% url 'buynow' %}" class="product-action">
+        {% csrf_token %}
+        <input type="text" value="{{ data.id }}" name="productid" hidden>
+        <button class="btn btn-primary text-uppercase">Buy Now</button>
+      </form>
+    </div>
+  </div>
+{% endif %}
+  <!-- 2nd Main Section -->
+  <div class="main-section">
+    <div class="common-details">
+      <h3>Superfast Delivery</h3>
+      <p>Get your order delivered to your doorstep at the earliest from dark stores near you.</p>
+
+      <h3>Best Prices & Offers</h3>
+      <p>Best price destination with offers directly from the manufacturers.</p>
+
+      <h3>Wide Assortment</h3>
+      <p>Choose from 5000+ products across food, personal care, household & other categories.</p>
+    </div>
+  </div>
+
+</section>
+
+
+
+
+
+
+
+
+<!--  <div class="product-details">-->
+<!--    <a href=""></a>-->
+<!--    <img src="{{data.Image.url}}" alt="Product Name">-->
+
+<!--    <p><strong>Price:</strong> ${{ data.Price }}</p>-->
+<!--    <p><strong>Description:</strong> {{ data.Description }}</p>-->
+<!--    &lt;!&ndash; Add more product details as needed &ndash;&gt;-->
+
+<!--    <form  method="post" action="{% url 'buynow'   %}" class="">-->
+<!--      {% csrf_token %}-->
+
+<!--       <input type="text" value="{{data.id}}" name="productid" hidden>-->
+<!--      <div class="mt-3 d-flex justify-content-between align-items-center">-->
+<!--          <button class="btn btn-success text-uppercase btn-sm details">Buy Now</button>-->
+<!--      </div>-->
+
+<!--    </form>-->
+
+<!--    <br>-->
+
+<!--  <form  method="post" action="{% url 'addcart'  %}" class="">-->
+<!--    {% csrf_token %}-->
+<!--        <input type="text" value="{{data.id}}" name="productid" hidden>-->
+
+<!--         <input type="number" name="quantity" required>-->
+<!--        <button class="btn btn-success text-uppercase btn-sm details">Add to Cart</button>-->
+
+<!--  </form>-->
+
+
+
+<!--    <a href="{ }">Back to Product List</a>-->
+<!--  </div>-->
+
+{% endblock %}
